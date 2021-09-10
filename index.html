@@ -3,8 +3,14 @@
 <head>
 	<meta name="viewport" content="with=device-width, initial-scale=1.0">
 	<title>Gute Zukunft Bremen</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,300italic' rel='stylesheet' type='text/css'>
+  <link rel='stylesheet' type='text/css' href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.carousel.min.css"/>
+  <link rel="stylesheet" type="text/css" href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.theme.default.min.css">
+
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 <body>
 	<section class="header">
@@ -15,6 +21,7 @@
 				<ul>
 					<li><a href="index.html">Home</a></li>
 					<li><a href="#About">Über uns</a></li>
+					<li><a href="#About">Projekte</a></li>
 					<li><a href="#Kontakt">Kontakt</a></li>
 				</ul>
 			</div>
@@ -30,14 +37,103 @@
 
 	<section class="ueberUns" id="About">
 		<h1>Über uns</h1> 
-		<br>
 		<p>Wir bieten Kultur- und Integrationsprojekte an.</p>
-		<br>
-		<br>
-		<br>
-		<br>
-	</section>	
+	</section>
+	<!--	Projekte	-->	
+	<div class="container">
+  <h3>Unsere Projekte:</h3>
+  <div class="panel panel-primary">
+    <div class="panel-body">
+      <div class="owl-carousel owl-theme video-slider-1">
+        <video onplay="pauseSlider();" onpause="playSlider();" onended="playSlider();" controls="" style="width:100%;">
+            <source src="videos/video1.mp4" type="video/mp4">
+            <source src="videos/video1.mp4" type="video/ogg">
+          </video>
+          
+          <video onplay="pauseSlider();" onpause="playSlider();" onended="playSlider();" controls="" style="width:100%;">
+            <source src="videos/video2.mp4" type="video/mp4">
+            <source src="videos/video2.mp4" type="video/ogg">
+          </video>
 
+          <video onplay="pauseSlider();" onpause="playSlider();" onended="playSlider();" controls="" style="width:100%;">
+            <source src="videos/video3.mp4" type="video/mp4">
+            <source src="videos/video3.mp4" type="video/ogg">
+          </video>
+
+          <video onplay="pauseSlider();" onpause="playSlider();" onended="playSlider();" controls="" style="width:100%;">
+            <source src="videos/video4.mp4" type="video/mp4">
+            <source src="videos/video4.mp4" type="video/ogg">
+          </video>
+
+          <video onplay="pauseSlider();" onpause="playSlider();" onended="playSlider();" controls="" style="width:100%;">
+            <source src="videos/video6.mp4" type="video/mp4">
+            <source src="videos/video6.mp4" type="video/ogg">
+          </video>
+
+          <video onplay="pauseSlider();" onpause="playSlider();" onended="playSlider();" controls="" style="width:100%;">
+            <source src="videos/video7.mp4" type="video/mp4">
+            <source src="videos/video7.mp4" type="video/ogg">
+          </video>
+
+          <video onplay="pauseSlider();" onpause="playSlider();" onended="playSlider();" controls="" style="width:100%;">
+            <source src="videos/video8.mp4" type="video/mp4">
+            <source src="videos/video8.mp4" type="video/ogg">
+          </video>
+
+          <video onplay="pauseSlider();" onpause="playSlider();" onended="playSlider();" controls="" style="width:100%;">
+            <source src="videos/video10.mp4" type="video/mp4">
+            <source src="videos/video10.mp4" type="video/ogg">
+          </video>
+
+          <video onplay="pauseSlider();" onpause="playSlider();" onended="playSlider();" controls="" style="width:100%;">
+            <source src="videos/video13.mp4" type="video/mp4">
+            <source src="videos/video13.mp4" type="video/ogg">
+          </video>
+
+          <video onplay="pauseSlider();" onpause="playSlider();" onended="playSlider();" controls="" style="width:100%;">
+            <source src="videos/video15.mp4" type="video/mp4">
+            <source src="videos/video15.mp4" type="video/ogg">
+          </video>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/owl.carousel.js"></script>
+
+<script type="text/javascript">
+  
+//owlCarousel slider  
+var owl = $(".video-slider-1").owlCarousel({
+    items: 1,
+    loop: true,
+    margin: 10,
+    autoplay: true,
+    autoplayTimeout: 4000,
+    //autoplayHoverPause: true,
+    lazyLoad: true,
+    dots: true,
+    onTranslate: function () {
+        $('.owl-item').find('video').each(function () {
+            this.pause();
+        });
+    }
+});
+
+// Play slider when video pause
+function playSlider(){
+    window.owl.trigger('play.owl.autoplay')
+}
+
+// Pause slider when video play
+function pauseSlider(){
+    window.owl.trigger('stop.owl.autoplay')
+}
+//Video Slider Code by: https://onlinewebtutorblog.com/html5-video-slider-using-owl-carousel-jquery-plugin/
+</script>
+	
 	<!--	Kontakt		-->
 
 	<section class="kontakt" id="Kontakt">
